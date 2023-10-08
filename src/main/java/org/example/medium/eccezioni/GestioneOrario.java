@@ -45,7 +45,9 @@ public class GestioneOrario {
             
             return orarioInSec2 - orarioInSec1;
         } catch (ExcOrarioNonValido exc) {
-            System.err.println("Errore: "+exc.getMessage());
+            System.err.println("getMessage: exc.getMessage());
+            System.err.println("getMessaggio: "+exc.getMessaggio());
+            System.err.println("toString: "+exc);
             throw new Error();
         }
     }

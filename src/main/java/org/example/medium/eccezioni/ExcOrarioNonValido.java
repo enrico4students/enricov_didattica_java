@@ -24,6 +24,12 @@ public class ExcOrarioNonValido extends Exception {
         this.messaggio = messaggio;
     }
 
+    public String getMessaggio() {
+        return this.messaggio;
+    }
+
+    
+    
     public void setOrario(int ora, int minuti, int secondi) {
         this.ora = ora;
         this.minuti= minuti;
@@ -32,7 +38,8 @@ public class ExcOrarioNonValido extends Exception {
 
     @Override
     public String toString() {
-        String msg = super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        String msg;
+        msg = super.toString();
         msg += "\n" + this.ora+":"+this.minuti+":"+this.secondi;
         return msg;
     }    
