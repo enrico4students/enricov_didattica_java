@@ -1,5 +1,5 @@
 // due thread con nome 
-package com.enrico2001665.dattica.tpsit.y4.lab10;
+package com.enrico200165.didattica.tpsit.y4.lab10;
 
 public class ProvaNani2{
   public static void main(String args[]){

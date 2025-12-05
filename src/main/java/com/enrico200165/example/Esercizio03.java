@@ -1,5 +1,5 @@
 
-package verifiche.c4q.lab01;
+package com.enrico200165.example;
 
 class InfoCoppiaValoriVettore {
 

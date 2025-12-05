@@ -1,4 +1,4 @@
-package com.enrico2001665.dattica.tpsit.y4.lab10;// utilizzato in com.enrico2001665.dattica.tpsit.y4.lab10.ProvaNani1
+package com.enrico200165.didattica.tpsit.y4.lab10;// utilizzato in com.enrico2001665.dattica.tpsit.y4.lab10.ProvaNani1
 
 import java.util.Random;
 
