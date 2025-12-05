@@ -1,4 +1,4 @@
-package com.enrico200165.didattica.tpsit.y4.lab10;// thread con parametro il nome dello stesso
+package com.enrico2001665.didattica.tpsit.y4.lab10;// thread con parametro il nome dello stesso
 
 public class ContaINani2 extends Thread{
   public ContaINani2(String nome){                // costruttore

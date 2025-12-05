@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/com/enrico200165/didattica/tpsit/y4/lab10/ContaINani1.java
-package com.enrico200165.didattica.tpsit.y4.lab10;// utilizzato in com.enrico2001665.dattica.tpsit.y4.lab10.ProvaNani1
-========
 package com.enrico2001665.didattica.tpsit.y4.lab10;// utilizzato in com.enrico2001665.dattica.tpsit.y4.lab10.ProvaNani1
->>>>>>>> c70af342c3c538838fa29ba61fa43ec39f74edea:src/main/java/com/enrico2001665/didattica/tpsit/y4/lab10/ContaINani1.java
 
 public class ContaINani1 extends Thread{
     public void run(){
