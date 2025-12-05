@@ -21,6 +21,12 @@ Formato:
 
 Consiglio: creare la struttura esattamente come indicato, poi usare `mvn compile` e `mvn exec:java`.
 
+---   
+
+## Comando maven per generare il progetto **vuoto iniziale**
+
+mvn archetype:generate -DgroupId=it.school -DartifactId=ai-life-companion -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
 ---
 
 1. Struttura del progetto
