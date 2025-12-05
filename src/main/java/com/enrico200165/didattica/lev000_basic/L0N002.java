@@ -26,7 +26,6 @@ class Studente {
 // Classe 2: Main (avvio del programma)
 public class L0N002 {
 
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
