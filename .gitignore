@@ -1,7 +1,14 @@
+
+*.class
+*.jar
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+
+!**/target/**/out/
 
 ### Eclipse ###
 .apt_generated

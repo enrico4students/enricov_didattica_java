@@ -1,0 +1,21 @@
+public class UnitàReteNeurale {
+    private int[] a;
+    private int b;
+
+    public UnitàReteNeurale(int dimensioneInput) {
+        pesi = new int[dimensioneInput];
+        bias = 0;
+    }
+
+    public int calcolaUscita(int[] input) {
+        int somma = b;
+        for (int i = 0; i < input.length; i++) {
+            somma += input[i] * a[i];
+        }
+        if (somma > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
