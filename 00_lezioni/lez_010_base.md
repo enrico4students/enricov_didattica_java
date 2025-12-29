@@ -215,11 +215,13 @@ Java fornisce tre costrutti principali per la ripetizione.
 ---
 
 ## 7. Strutture iterative – Parte 2
-3. Ciclo for:
+3. Ciclo for:  
 
-    for (int i = 0; i < 10; i++) {
-        System.out.println(i);
-    }
+```
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+```
 
 Concetti:
 - Inizializzazione: int i = 0  
@@ -243,9 +245,7 @@ Inizializzazione:
 
 Accesso:
 
-    int x = numeri[0];
-
-Gli indici partono da 0.
+    int x = numeri[0]; // Gli indici partono da 0.
 
 ---
 
@@ -286,7 +286,8 @@ Esempio:
 Caratteristiche importanti:
 - I metodi permettono di dividere il problema in parti più semplici.
 - Migliorano la leggibilità.
-- Evitano duplicazioni.
+- Evitano duplicazioni.  
+
 
 Overloading: metodi con lo stesso nome ma parametri diversi.
 
