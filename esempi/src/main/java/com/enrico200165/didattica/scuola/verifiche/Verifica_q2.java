@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 class Verifica_q2<K, V> {
     
-    HashMap table = new HashMap<K, V>();
+    HashMap<K, V> table = new HashMap<K, V>();
     
     public V getValue(K key) {
         return (V)table.get(key);

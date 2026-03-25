@@ -7,8 +7,6 @@ class Implementation {
 
     public String[] sort(String[] stringsV) {
 
-        String[] ret = new String[stringsV.length];
-
         boolean scambiato;
         do {
             scambiato = false;

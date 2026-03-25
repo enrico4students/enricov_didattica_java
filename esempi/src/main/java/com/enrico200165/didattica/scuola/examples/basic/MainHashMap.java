@@ -14,8 +14,6 @@ public class MainHashMap {
 
     public static void main(String[] argv) {
 
-        ImplemHashMap impl = new ImplemHashMap();
-
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
         map.put("lunedi", 1);

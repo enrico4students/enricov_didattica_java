@@ -4,7 +4,6 @@
  */
 package com.enrico200165.didattica.scuola.verifiche;
 
-import java.lang.Math;
 
 /**
  *

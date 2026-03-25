@@ -2,7 +2,6 @@
 package com.enrico200165.didattica.scuola.tpsit.y4.lab10;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class ProvaNaniMettitiAllaProva {
 
@@ -15,9 +14,6 @@ public class ProvaNaniMettitiAllaProva {
             threads.add(new ContaINaniMettitiAllaProva("thread" + i));
             threads.get(i).start();
         }
-
-        Random r = new Random();
-        int threadToKill = r.ints(1, 0, threads.size()).findFirst().getAsInt();
 
         boolean ancoraVivi = true;
         while (ancoraVivi) {
