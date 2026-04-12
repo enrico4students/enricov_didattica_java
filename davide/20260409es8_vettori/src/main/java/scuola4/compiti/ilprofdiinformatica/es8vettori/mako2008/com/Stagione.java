@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class Stagione {
 
+    int nr_stagione;
+    int nr_episodi;
+    String sceneggiatore;
+    String trama;
+
+    java.util.Scanner scanner = null;
+
     public Stagione() {
     }
 
@@ -32,7 +39,7 @@ public class Stagione {
         System.out.print("Inserire trama: ");
         this.trama = scanner.next();
 
-        System.out.println("valori inseriti: "+this);
+        // System.out.println("valori inseriti: "+this);
     }
 
 
@@ -49,7 +56,7 @@ public class Stagione {
     }
 
     public void setTrama(String trama) {
-        this.trama = trama;
+        trama = trama;
     }
 
     public int getNr_stagione() {
@@ -70,7 +77,7 @@ public class Stagione {
 
     @Override
     public String toString() {
-        return "Stagione {" +
+        return "Stagione { " +
                 "nr_stagione=" + nr_stagione +
                 ", nr_episodi=" + nr_episodi +
                 ", sceneggiatore='" + sceneggiatore + '\'' +
@@ -78,10 +85,4 @@ public class Stagione {
                 '}';
     }
 
-    int nr_stagione;
-    int nr_episodi;
-    String sceneggiatore;
-    String trama;
-
-    java.util.Scanner scanner = null;
 }

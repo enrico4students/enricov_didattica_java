@@ -15,12 +15,13 @@ public class Telefilm {
     int stagioniInserite = 0;
 
     public Telefilm() {
-        stagioni = new Stagione[100];
+        stagioni = new Stagione[100]; // codice duplicato nell'altro costruttore, non va bene
+        // andrebbe fattorizzato
     }
 
     @Override
     public String toString() {
-        return "Telefilm{ " +
+        return "Telefilm { " +
                 "nome='" + nome + '\'' +
                 ", genere='" + genere + '\'' +
                 ", prod_terminata=" + prod_terminata +
@@ -32,7 +33,8 @@ public class Telefilm {
         this.nome = nome;
         this.genere = genere;
         this.prod_terminata = prod_terminata;
-        this.stagioni = new Stagione[100];
+
+        this.stagioni = new Stagione[100]; // duplicato nei due costruttori, non va bene
     }
 
     boolean yesNo(String prompt, boolean askYesNo)  {
@@ -44,21 +46,23 @@ public class Telefilm {
 
 
         String answer = scanner.next();
+
         return answer.toLowerCase(Locale.ROOT).equals("si") ||
                 answer.toLowerCase(Locale.ROOT).equals("yes") ||
                 answer.toLowerCase(Locale.ROOT).equals("y") ||
                 answer.toLowerCase(Locale.ROOT).equals("s");
     }
 
-    public boolean addStagione(Stagione s) {
+    public boolean addStagione(Stagione stagione) {
 
-        if (this.stagioniInserite >= this.stagioni.length -1) {
+        if (stagioniInserite >= stagioni.length) {
             System.err.println("Non c'è spazio per altre stagioni");
             return false;
         }
 
-        this.stagioni[this.stagioniInserite++] = s;
-        System.out.println("ora ci sono "+ (this.stagioniInserite) + " stagioni");
+        stagioni[stagioniInserite] = stagione;
+        stagioniInserite++;
+        System.out.println("ora ci sono "+ stagioniInserite + " stagioni");
 
         return true;
     }
@@ -74,12 +78,7 @@ public class Telefilm {
         System.out.println("Inserire il genere: ");
         this.genere = scanner.next();
 
-        System.out.println("Inserire se la produzione è terminata: ");
-        String answer = scanner.next();
-        this.prod_terminata = answer.toLowerCase(Locale.ROOT).equals("si") ||
-                answer.toLowerCase(Locale.ROOT).equals("yes") ||
-                answer.toLowerCase(Locale.ROOT).equals("y") ||
-                answer.toLowerCase(Locale.ROOT).equals("s");
+        prod_terminata = yesNo("Inserire se la produzione è terminata: ", true);
 
         while (yesNo("vuoi inserire una stagione", true)) {
             Stagione s = new Stagione();
@@ -90,10 +89,11 @@ public class Telefilm {
 
     public float getNrMedioPuntate() {
 
-        if (this.stagioni == null)
+        if (stagioni == null)
             return 0;
 
         int totEpisodi = 0;
+
         for (Stagione s: stagioni) {
 
             // se incontriamo il primo elemento non valido CONTROLLO FRAGILISSIO ED ERRATO CONCETTUALMENTE
@@ -154,13 +154,18 @@ public class Telefilm {
     public void ordinaStagioni() {
 
         boolean daOrdinare = true;
+
         do {
+
             daOrdinare = false;
             for (int i = 0; i < stagioniInserite - 1; i++) {
                 if (stagioni[i].nr_episodi > stagioni[i + 1].nr_episodi) {
-                    Stagione temp = stagioni[i];
-                    stagioni[i] = stagioni[i + 1];
-                    stagioni[i + 1] = temp;
+
+                    // scambio di valori, necessariamente tramite variabile temporanea
+                    Stagione temp = stagioni[i]; // salvo valore elemento corrente
+                    stagioni[i] = stagioni[i + 1];  // assegno a corrente valore del successivo
+                    stagioni[i + 1] = temp;  // assegno al successivo il valore dell'elemento corrente che avevo salvat in temp
+
                     daOrdinare = true;
                 }
             }
