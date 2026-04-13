@@ -32,9 +32,11 @@ Concetti chiave:
 
 ## 1. Introduzione a Java – Parte 2
 Componenti fondamentali dell’ecosistema:
-- JDK: Java Development Kit, contiene compilatore, strumenti, librerie.
-- JRE: Java Runtime Environment, serve per eseguire i programmi.
-- JVM: Java Virtual Machine, interpreta ed esegue il bytecode.
+- **JVM**: Java Virtual Machine, interpreta ed esegue il bytecode.
+    - è inclusa nel JRE
+- **JRE**: **J**ava **R**untime **E**nvironment, serve per eseguire i programmi.
+  - di solito è incluso nel JDK
+- **JDK**: **J**ava **D**evelopment **K**it, contiene compilatore, strumenti, librerie.
 
 Java è multipiattaforma: lo stesso programma gira su Windows, Linux e macOS senza modifiche.
 
@@ -61,6 +63,9 @@ Compilazione e esecuzione da terminale:
 
     javac PrimoProgramma.java
     java PrimoProgramma
+
+`javac` il compilatore prende in input il sorgente `PrimoProgramma.java` e se è corretto genera `PrimoProgramma.class`
+`java` è la virtual machine, prende in input `PrimoProgramma.class` e lo esegue
 
 Note importanti:
 - Il nome della classe deve coincidere con il nome del file.
@@ -91,17 +96,23 @@ Concetti:
 ---
 
 ## 3. Sintassi di base – Parte 2
-Commenti in Java:
+
+I commenti non vengono eseguiti e servono per spiegare il codice
+
 - Commento su una linea:  
-      // testo del commento
-
+ ``` 
+    // testo del commento
+```
 - Commento su più linee:  
-      /* testo su più righe */
-
+```
+    /* testo su 
+    più 
+    righe */
+```
 - Commento per documentazione automatica (Javadoc):  
-      /** testo documentazione */
-
-I commenti non vengono eseguiti e servono per spiegare il codice.
+```
+    /** testo che deve seguire regole prestabilite */
+``` 
 
 ---
 
