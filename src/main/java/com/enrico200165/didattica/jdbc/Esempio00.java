@@ -68,8 +68,7 @@ public class Esempio00 {
 
             ArrayList<String> nomiCols = new ArrayList<>();
             ArrayList<String> tipiCols = new ArrayList<>();
-            
-            
+    
             ResultSetMetaData rsmd = resultSet.getMetaData();
             for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                 String colName = rsmd.getColumnName(i);
