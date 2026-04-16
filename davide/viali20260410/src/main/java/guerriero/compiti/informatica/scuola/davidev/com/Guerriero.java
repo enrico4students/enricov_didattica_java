@@ -1,6 +1,5 @@
-package informatica.scuola.davidev.com;
+package guerriero.compiti.informatica.scuola.davidev.com;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Guerriero {
@@ -36,7 +35,7 @@ public class Guerriero {
 
     void aggiungiArma(Arma arma) throws ExcpArmiFull {
 
-        if (nr_armi >= 4)
+        if (nr_armi >= 5)
             throw new ExcpArmiFull();
 
         armi[nr_armi++] = arma;
