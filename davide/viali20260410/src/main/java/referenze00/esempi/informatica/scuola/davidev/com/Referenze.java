@@ -39,7 +39,7 @@ public class Referenze {
         new Pippo(); // creiamo un oggetto di classe Pippo e non ci facciamo nulla
 
         // creiamo un oggetto di classe Pippo e stampiamo il suo attributo.x
-        System.out.println(   (new Pippo()).x    );
+        System.out.println(   ( new Pippo() ).x    );
 
         (new Pippo()).ciao();  // creiamo un oggetto di classe pippo e invochiamo metodi
 
