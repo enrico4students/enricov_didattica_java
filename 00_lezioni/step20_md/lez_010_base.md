@@ -1,8 +1,6 @@
 ---
-
 marp: true
 paginate: true
-theme: scuola-a4-landscape
 
 ---
 
