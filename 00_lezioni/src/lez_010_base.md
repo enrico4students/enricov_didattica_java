@@ -98,6 +98,145 @@ Punti importanti:
 
 ---
 
+## 2. Ambiente di sviluppo – Parte 3
+
+Per scrivere programmi Java esistono:
+
+- editor semplici;
+- IDE completi.
+
+Un editor serve soprattutto per scrivere codice.  
+Un IDE aiuta anche con compilazione, esecuzione e debug.
+
+---
+
+## Editor semplici
+
+Esempi:
+
+- Blocco note
+- Notepad++
+
+Vantaggi:
+
+- semplici;
+- leggeri;
+- utili per capire meglio compilazione ed errori.
+
+Svantaggi:
+
+- pochi aiuti automatici;
+- meno comodi per progetti grandi.
+
+Potenza: bassa  
+Complessità: bassa
+
+## Alcuni riferimenti
+
+Notepad++  
+https://notepad-plus-plus.org/
+
+---
+
+## Visual Studio Code
+
+Visual Studio Code è molto usato oggi.
+
+Con le estensioni Java permette:
+
+- compilazione;
+- esecuzione;
+- debug;
+- suggerimenti automatici.
+
+Potenza: alta, come un IDE    
+Complessità: media
+
+## Alcuni riferimenti
+
+Visual Studio Code  
+https://code.visualstudio.com/
+
+Java Extension Pack  
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+
+---
+
+## BlueJ
+
+BlueJ è un IDE pensato per studenti principianti.
+
+Vantaggi:
+
+- semplice;
+- interfaccia chiara;
+- utile per imparare classi e oggetti.
+
+Svantaggi:
+
+- meno adatto a progetti grandi.
+
+Potenza: media  
+Complessità: bassa
+
+## Alcuni riferimenti
+
+BlueJ  
+https://www.bluej.org/
+
+---
+
+## IDE professionali
+
+Esempi:
+
+- IntelliJ IDEA Community
+- Eclipse
+- NetBeans
+
+Vantaggi:
+
+- strumenti avanzati;
+- debug potente;
+- gestione grandi progetti.
+
+Svantaggi:
+
+- più complessi;
+- richiedono configurazione.
+
+Potenza: molto alta  
+Complessità: medio-alta
+
+## Alcuni riferimenti
+
+IntelliJ IDEA Community  
+https://www.jetbrains.com/idea/download/
+
+Eclipse  
+https://www.eclipse.org/downloads/
+
+NetBeans  
+https://netbeans.apache.org/
+
+---
+
+## Quale scegliere?
+
+Per iniziare:
+
+- Notepad++;
+- Visual Studio Code + Maven (strumento di build)
+- BlueJ;
+
+Successivamente:
+
+- IntelliJ IDEA;
+- Eclipse;
+- NetBeans.
+
+---
+
 ## 3. Sintassi di base – Parte 1
 Una classe Java contiene attributi (dati) e metodi (azioni).
 
