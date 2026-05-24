@@ -1,6 +1,7 @@
 ---
 marp: true
 paginate: true
+
 ---
 
 ## Livello 1 – Overview
@@ -31,6 +32,7 @@ Concetti chiave:
 ---
 
 ## 1. Introduzione a Java – Parte 2
+
 Componenti fondamentali dell’ecosistema:
 - **JVM**: Java Virtual Machine, interpreta ed esegue il bytecode.
     - è inclusa nel JRE
@@ -38,17 +40,34 @@ Componenti fondamentali dell’ecosistema:
   - di solito è incluso nel JDK
 - **JDK**: **J**ava **D**evelopment **K**it, contiene compilatore, strumenti, librerie.
 
-Java è multipiattaforma: lo stesso programma gira su Windows, Linux e macOS senza modifiche.
+---  
+
+### 1.1 Portabilità  
+
+Java cerca di essere multipiattaforma.  
+Essere totalmente multipiattaforma è molto difficile forse impossibile, ma in generale uno stesso programma java gira su Windows, Linux e macOS con il minimo possibile di modifiche.
+Programmi semplici possono girare senza modifiche.
+Possiamo quindi dire che i programmi java hanno un'alta **portabilità**.  
 
 ---
 
 ## 2. Ambiente di sviluppo – Parte 1
+
 Per iniziare a programmare servono:
 - Installazione del JDK.
 - Verifica della presenza dei comandi javac e java.
 - Creazione del primo file sorgente.
 
+Per fare questo cercare e seguire un tutorial **aggiornato**  
+ex. https://www.youtube.com/watch?v=nTfoRP2pw8E  
+
+---  
+
+### Programma minimale per test  
+
 Esempio di file semplice:
+
+nel file primoprogramma.java inserire il codice seguente:
 
     public class PrimoProgramma {
         public static void main(String[] args) {
@@ -59,6 +78,9 @@ Esempio di file semplice:
 ---
 
 ## 2. Ambiente di sviluppo – Parte 2
+
+Dopo aver installato e configurato il JDK è possibile compilare ed eseguire.
+
 Compilazione e esecuzione da terminale:
 
     javac PrimoProgramma.java
@@ -67,10 +89,12 @@ Compilazione e esecuzione da terminale:
 `javac` il compilatore prende in input il sorgente `PrimoProgramma.java` e se è corretto genera `PrimoProgramma.class`
 `java` è la virtual machine, prende in input `PrimoProgramma.class` e lo esegue
 
-Note importanti:
+---  
+
+Punti importanti:
 - Il nome della classe deve coincidere con il nome del file.
 - L’IDE può automatizzare compilazione ed esecuzione.
-- L’organizzazione di un progetto Java prevede cartelle per codice, risorse e compilati.
+- L’organizzazione di un progetto Java non è libera, in generale prevede determinate cartelle per codice, risorse e compilati.
 
 ---
 
