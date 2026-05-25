@@ -1,6 +1,9 @@
 ---
+
 marp: false
 paginate: true
+theme: scuola-a4-portrait
+
 ---
 
 
