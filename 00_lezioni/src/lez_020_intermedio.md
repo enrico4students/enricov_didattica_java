@@ -2,7 +2,7 @@
 
 marp: false
 paginate: true
-theme: scuola-a4-portrait
+theme: scuola-a4-landscape
 
 ---
 
