@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *.log
 
@@ -37,3 +38,46 @@ bin/
 ### Mac OS ###
 .DS_Store
 /target/
+=======
+
+005_authoring_gen/
+
+*.log
+
+*.class
+*.jar
+
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+
+!**/target/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+/target/
+>>>>>>> 227fc3b71365df8c8a7d5ba060d123f2e15dea3c
