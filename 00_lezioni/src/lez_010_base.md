@@ -7,26 +7,29 @@ theme: scuola-a4-landscape
 ---
 
 ## Livello 1 – Overview
-Introduzione completa e progressiva ai fondamenti del linguaggio Java.
+Introduzione completa ai fondamenti del linguaggio Java.
 
-Obiettivi del livello:
-- Comprendere la struttura del linguaggio.
-- Configurare l’ambiente di sviluppo.
-- Usare variabili, operatori, selezioni e cicli.
-- Creare i primi programmi modulari.
-- Comprendere che cosa sono classi e oggetti.
+Obiettivi del livello:  
+- Comprendere la struttura del linguaggio.  
+- Configurare l’ambiente di sviluppo.  
+- Usare variabili, operatori, selezioni e cicli.  
+- Creare i primi programmi modulari.  
+- Comprendere che cosa sono classi e oggetti.  
 
 ---
 
-## 1. Introduzione a Java – Parte 1
-Java è un linguaggio di programmazione:
+## 1. Introduzione a Java – Parte 1  
+
+Java è un linguaggio di programmazione:  
+
 - general-purpose  
 - orientato agli oggetti  
 - portabile, grazie alla JVM  
 - fortemente tipizzato  
 - ampiamente utilizzato in applicazioni aziendali, Android, sistemi di backend.
 
-Concetti chiave:
+Concetti chiave:  
+
 - Il codice sorgente Java ha estensione .java.
 - Il compilatore produce bytecode (.class).
 - Il bytecode viene eseguito dalla JVM (Java Virtual Machine).
@@ -35,14 +38,15 @@ Concetti chiave:
 
 ## 1. Introduzione a Java – Parte 2
 
-Componenti fondamentali dell’ecosistema:
-- **JVM**: Java Virtual Machine, interpreta ed esegue il bytecode.
-    - è inclusa nel JRE
-- **JRE**: **J**ava **R**untime **E**nvironment, serve per eseguire i programmi.
-  - di solito è incluso nel JDK
-- **JDK**: **J**ava **D**evelopment **K**it, contiene compilatore, strumenti, librerie.
+Componenti fondamentali dell’ecosistema:  
 
----  
+- **JVM**: Java Virtual Machine, interpreta ed esegue il bytecode.  
+  - è inclusa nel JRE  
+- **JRE**: **J**ava **R**untime **E**nvironment, serve per eseguire i programmi.
+  - di solito è incluso nel JDK  
+- **JDK**: **J**ava **D**evelopment **K**it, contiene compilatore, strumenti, librerie.  
+
+---
 
 ### 1.1 Portabilità  
 
@@ -55,27 +59,30 @@ Possiamo quindi dire che i programmi java hanno un'alta **portabilità**.
 
 ## 2. Ambiente di sviluppo – Parte 1
 
-Per iniziare a programmare servono:
+Per iniziare a programmare servono:  
+
 - Installazione del JDK.
 - Verifica della presenza dei comandi javac e java.
 - Creazione del primo file sorgente.
 
-Per fare questo cercare e seguire un tutorial **aggiornato**  
-ex. https://www.youtube.com/watch?v=nTfoRP2pw8E  
+Per fare questo cercare e seguire un tutorial **aggiornato** in questo momento  
+ex. tutorial aggiornato al momento in cui vengono scritte queste note:  
+https://www.youtube.com/watch?v=Ibi7ZFsOwF8  
 
----  
+---
 
 ### Programma minimale per test  
 
 Esempio di file semplice:
 
-nel file primoprogramma.java inserire il codice seguente:
+creare un file di testo `primoprogramma.java` e inserire il codice seguente:
 
     public class PrimoProgramma {
         public static void main(String[] args) {
             System.out.println("Benvenuto in Java");
         }
     }
+    
 
 ---
 
@@ -88,13 +95,23 @@ Compilazione e esecuzione da terminale:
     javac PrimoProgramma.java
     java PrimoProgramma
 
-`javac` il compilatore prende in input il sorgente `PrimoProgramma.java` e se è corretto genera `PrimoProgramma.class`
+`javac`, il compilatore, prende in input il sorgente `PrimoProgramma.java` e se è corretto genera `PrimoProgramma.class`
 `java` è la virtual machine, prende in input `PrimoProgramma.class` e lo esegue
 
----  
+stesso esempio con più dettagli, in Linux  *(ls è il comando linux equivalente a dir del mondo DOS/Windows, \*.class limita la visualizzazione ai files che terminano con .class)*
 
-Punti importanti:
-- Il nome della classe deve coincidere con il nome del file.
+    $ javac PrimoProgramma.java 
+    $ ls *.class
+    PrimoProgramma.class
+    $ java PrimoProgramma 
+    Benvenuto in Java
+    $ 
+
+---
+
+Punti importanti:  
+
+- Il nome della classe **deve** coincidere con il nome del file.
 - L’IDE può automatizzare compilazione ed esecuzione.
 - L’organizzazione di un progetto Java non è libera, in generale prevede determinate cartelle per codice, risorse e compilati.
 
@@ -135,8 +152,7 @@ Complessità: bassa
 
 ## Alcuni riferimenti
 
-Notepad++  
-https://notepad-plus-plus.org/
+Notepad++ https://notepad-plus-plus.org/
 
 ---
 
@@ -156,11 +172,9 @@ Complessità: media
 
 ## Alcuni riferimenti
 
-Visual Studio Code  
-https://code.visualstudio.com/
+Visual Studio Code https://code.visualstudio.com/  
 
-Java Extension Pack  
-https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+Java Extension Pack https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack  
 
 ---
 
@@ -181,10 +195,9 @@ Svantaggi:
 Potenza: media  
 Complessità: bassa
 
-## Alcuni riferimenti
+## Alcuni riferimenti  
 
-BlueJ  
-https://www.bluej.org/
+BlueJ https://www.bluej.org/  
 
 ---
 
@@ -210,16 +223,15 @@ Svantaggi:
 Potenza: molto alta  
 Complessità: medio-alta
 
-## Alcuni riferimenti
+---
 
-IntelliJ IDEA Community  
-https://www.jetbrains.com/idea/download/
+## IDE - Alcuni riferimenti
 
-Eclipse  
-https://www.eclipse.org/downloads/
+IntelliJ IDEA Community https://www.jetbrains.com/idea/download/
 
-NetBeans  
-https://netbeans.apache.org/
+Eclipse https://www.eclipse.org/downloads/
+
+NetBeans https://netbeans.apache.org/
 
 ---
 
@@ -239,7 +251,8 @@ Successivamente:
 
 ---
 
-## 3. Sintassi di base – Parte 1
+## 3. Sintassi di base – Parte 1  
+
 Una classe Java contiene attributi (dati) e metodi (azioni).
 
 Struttura minima:
