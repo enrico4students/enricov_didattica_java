@@ -262,7 +262,7 @@ Struttura minima:
 
         // metodi
         public static void main(String[] args) {
-            // codice eseguibile
+            // codice ... 
         }
     }
 
