@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lez_015_maven.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file://c:\00_data\08_dev\08_dev-didattica\enricov_didattica_java\005_authoring_gen\themes\portrait.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file://c:\00_data\08_dev\08_dev-didattica\enricov_didattica_java\authoring\themes\portrait.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<hr>
+<h1 id="introduzione-a-maven">Introduzione a Maven</h1>
+<h2 id="il-problema-che-maven-risolve">Il problema che Maven risolve</h2>
+<p>Quando si sviluppa un progetto Java semplice, spesso si compila così:</p>
+<pre class="hljs"><code><div>javac Main.java
+java Main
+</div></code></pre>
+<p>Questo funziona per programmi molto piccoli.</p>
+<p>Ma nei progetti reali emergono rapidamente alcuni problemi:</p>
+<ul>
+<li>il progetto contiene <strong>molti file .java</strong></li>
+<li>servono <strong>librerie esterne</strong></li>
+<li>bisogna <strong>compilare sempre nello stesso ordine</strong></li>
+<li>bisogna creare <strong>file JAR</strong></li>
+<li>bisogna <strong>gestire versioni delle dipendenze</strong></li>
+</ul>
+<p>Fare tutto manualmente diventa difficile.</p>
+<p>Per questo esistono i <strong>build tool</strong>.</p>
+<p>Un build tool è un programma che:</p>
+<ul>
+<li>compila il codice</li>
+<li>scarica librerie</li>
+<li>esegue test</li>
+<li>crea il file finale (JAR o WAR)</li>
+</ul>
+<p>Maven è uno dei build tool più usati nel mondo Java.</p>
+<hr>
+<h1 id="cosè-maven">Cos'è Maven</h1>
+<p>Maven è uno strumento che:</p>
+<ol>
+<li><strong>gestisce la compilazione</strong></li>
+<li><strong>scarica automaticamente le librerie</strong></li>
+<li><strong>standardizza la struttura del progetto</strong></li>
+<li><strong>crea il file finale (JAR/WAR)</strong></li>
+</ol>
+<p>Maven lavora leggendo un file di configurazione chiamato:</p>
+<pre class="hljs"><code><div>pom.xml
+</div></code></pre>
+<p>POM significa:</p>
+<p>Project Object Model</p>
+<p>È il file che descrive il progetto.</p>
+<hr>
+<h1 id="struttura-standard-di-un-progetto-maven">Struttura standard di un progetto Maven</h1>
+<p>Maven usa una <strong>struttura standard delle directory</strong>.</p>
+<p>Questo è molto importante perché Maven si basa su convenzioni.</p>
+<p>Struttura tipica:</p>
+<pre class="hljs"><code><div>progetto/
+    pom.xml
+    src/
+        main/
+            java/
+            resources/
+        test/
+            java/
+</div></code></pre>
+<p>Significato:</p>
+<p>src/main/java
+codice dell'applicazione</p>
+<p>src/main/resources
+file di configurazione</p>
+<p>src/test/java
+test automatici</p>
+<hr>
+<h1 id="installare-maven">Installare Maven</h1>
+<p>Scaricare Maven dal sito ufficiale:</p>
+<p><a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
+<p>Scompattare e aggiungere la cartella <code>bin</code> al PATH.</p>
+<p>Verificare l'installazione:</p>
+<pre class="hljs"><code><div>mvn -version
+</div></code></pre>
+<p>Se funziona, Maven è pronto.</p>
+<hr>
+<h1 id="creare-un-progetto-maven">Creare un progetto Maven</h1>
+<p>Creare una cartella e inizializzare un progetto:</p>
+<pre class="hljs"><code><div>mvn archetype:generate
+</div></code></pre>
+<p>Oppure creare manualmente la struttura e il file <code>pom.xml</code>.</p>
+<hr>
+<h1 id="il-file-pomxml">Il file pom.xml</h1>
+<p>Il file più importante di Maven è:</p>
+<pre class="hljs"><code><div>pom.xml
+</div></code></pre>
+<p>Contiene informazioni sul progetto.</p>
+<p>Esempio minimale:</p>
+<pre class="hljs"><code><div>&lt;project&gt;
+    ...
+&lt;/project&gt;
+</div></code></pre>
+<p>Dentro questo file si definiscono:</p>
+<ul>
+<li>nome del progetto</li>
+<li>versione</li>
+<li>librerie</li>
+<li>configurazione compilazione</li>
+</ul>
+<hr>
+<h1 id="concetti-fondamentali-di-maven">Concetti fondamentali di Maven</h1>
+<h2 id="groupid">GroupId</h2>
+<p>Identifica l'organizzazione.</p>
+<p>Esempio:</p>
+<pre class="hljs"><code><div>com.example
+</div></code></pre>
+<hr>
+<h2 id="artifactid">ArtifactId</h2>
+<p>Nome del progetto.</p>
+<p>Esempio:</p>
+<pre class="hljs"><code><div>myproject
+</div></code></pre>
+<hr>
+<h2 id="version">Version</h2>
+<p>Versione del progetto.</p>
+<p>Esempio:</p>
+<pre class="hljs"><code><div>1.0
+</div></code></pre>
+<hr>
+<h2 id="dipendenze">Dipendenze</h2>
+<p>Maven può scaricare automaticamente librerie da Internet.</p>
+<p>Ad esempio:</p>
+<ul>
+<li>JUnit</li>
+<li>Jackson</li>
+<li>Apache Commons</li>
+</ul>
+<p>Le librerie vengono scaricate da:</p>
+<p>Maven Central Repository</p>
+<p><a href="https://repo.maven.apache.org/maven2/">https://repo.maven.apache.org/maven2/</a></p>
+<hr>
+<h1 id="esempio-di-dipendenza">Esempio di dipendenza</h1>
+<p>Nel pom.xml si scrive:</p>
+<pre class="hljs"><code><div>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+        &lt;version&gt;5.10.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</div></code></pre>
+<p>Quando si compila il progetto, Maven scarica automaticamente la libreria.</p>
+<hr>
+<h1 id="comandi-maven-più-importanti">Comandi Maven più importanti</h1>
+<p>Tutti i comandi si eseguono nella cartella del progetto.</p>
+<hr>
+<h2 id="compilare-il-progetto">Compilare il progetto</h2>
+<pre class="hljs"><code><div>mvn compile
+</div></code></pre>
+<p>Compila i file Java.</p>
+<hr>
+<h2 id="eseguire-i-test">Eseguire i test</h2>
+<pre class="hljs"><code><div>mvn test
+</div></code></pre>
+<p>Esegue i test automatici.</p>
+<hr>
+<h2 id="creare-il-jar">Creare il JAR</h2>
+<pre class="hljs"><code><div>mvn package
+</div></code></pre>
+<p>Produce il file JAR dentro:</p>
+<pre class="hljs"><code><div>target/
+</div></code></pre>
+<hr>
+<h2 id="pulire-il-progetto">Pulire il progetto</h2>
+<pre class="hljs"><code><div>mvn clean
+</div></code></pre>
+<p>Cancella i file compilati.</p>
+<hr>
+<h2 id="build-completa">Build completa</h2>
+<p>Il comando più usato è:</p>
+<pre class="hljs"><code><div>mvn clean package
+</div></code></pre>
+<p>Significa:</p>
+<ol>
+<li>pulire</li>
+<li>compilare</li>
+<li>testare</li>
+<li>creare il JAR</li>
+</ol>
+<hr>
+<h1 id="dove-maven-salva-le-librerie">Dove Maven salva le librerie</h1>
+<p>Maven salva le dipendenze nella cartella:</p>
+<pre class="hljs"><code><div>~/.m2/repository
+</div></code></pre>
+<p>Su Windows:</p>
+<pre class="hljs"><code><div>C:\Users\USERNAME\.m2\repository
+</div></code></pre>
+<p>Questo evita di scaricare le librerie ogni volta.</p>
+<hr>
+<h1 id="maven-in-intellij-idea">Maven in IntelliJ IDEA</h1>
+<p>IntelliJ ha supporto Maven integrato.</p>
+<p>Creare progetto Maven:</p>
+<p>File → New Project → Maven</p>
+<p>IntelliJ:</p>
+<ul>
+<li>legge il pom.xml</li>
+<li>scarica automaticamente le dipendenze</li>
+<li>mostra i comandi Maven nella finestra &quot;Maven&quot;</li>
+</ul>
+<p>Comandi disponibili direttamente nell'interfaccia:</p>
+<ul>
+<li>compile</li>
+<li>test</li>
+<li>package</li>
+<li>install</li>
+</ul>
+<p>Quando si modifica il pom.xml, IntelliJ aggiorna automaticamente il progetto.</p>
+<hr>
+<h1 id="maven-in-visual-studio-code">Maven in Visual Studio Code</h1>
+<p>In VS Code serve installare alcune estensioni.</p>
+<p>Aprire Extensions e installare:</p>
+<p>Extension Pack for Java
+Maven for Java</p>
+<p>Queste estensioni permettono:</p>
+<ul>
+<li>riconoscere progetti Maven</li>
+<li>eseguire goal Maven</li>
+<li>gestire dipendenze</li>
+</ul>
+<p>Nel pannello Maven di VS Code si possono eseguire comandi come:</p>
+<pre class="hljs"><code><div>compile
+test
+package
+</div></code></pre>
+<p>oppure usare il terminale.</p>
+<hr>
+<h1 id="esempio-di-pomxml-didattico">Esempio di pom.xml didattico</h1>
+<p>Questo pom.xml funziona nella maggior parte dei progetti Java didattici.</p>
+<pre class="hljs"><code><div>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example&lt;/groupId&gt;
+    &lt;artifactId&gt;java-project&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;version&gt;5.10.0&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.11.0&lt;/version&gt;
+            &lt;/plugin&gt;
+
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.1.2&lt;/version&gt;
+            &lt;/plugin&gt;
+
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</div></code></pre>
+<hr>
+<h1 id="come-usare-questo-pomxml">Come usare questo pom.xml</h1>
+<ol>
+<li>
+<p>creare cartella progetto</p>
+</li>
+<li>
+<p>inserire pom.xml</p>
+</li>
+<li>
+<p>creare cartella codice</p>
+<p>src/main/java</p>
+</li>
+<li>
+<p>inserire file Java</p>
+</li>
+</ol>
+<p>Esempio:</p>
+<pre class="hljs"><code><div>src/main/java/org/example/Main.java
+</div></code></pre>
+<hr>
+<h1 id="esempio-di-compilazione">Esempio di compilazione</h1>
+<p>Da terminale nella cartella del progetto:</p>
+<pre class="hljs"><code><div>mvn clean compile
+</div></code></pre>
+<hr>
+<h1 id="creare-il-jar-1">Creare il JAR</h1>
+<pre class="hljs"><code><div>mvn package
+</div></code></pre>
+<p>Il file sarà in:</p>
+<pre class="hljs"><code><div>target/java-project-1.0-SNAPSHOT.jar
+</div></code></pre>
+<hr>
+<h1 id="eseguire-il-programma">Eseguire il programma</h1>
+<p>Se il JAR contiene la classe principale configurata, si può eseguire:</p>
+<pre class="hljs"><code><div>java -jar target/java-project-1.0-SNAPSHOT.jar
+</div></code></pre>
+<hr>
+<h1 id="comandi-maven-più-usati-riassunto">Comandi Maven più usati (riassunto)</h1>
+<p>Compilare:</p>
+<pre class="hljs"><code><div>mvn compile
+</div></code></pre>
+<p>Test:</p>
+<pre class="hljs"><code><div>mvn test
+</div></code></pre>
+<p>Creare JAR:</p>
+<pre class="hljs"><code><div>mvn package
+</div></code></pre>
+<p>Pulire progetto:</p>
+<pre class="hljs"><code><div>mvn clean
+</div></code></pre>
+<p>Build completa:</p>
+<pre class="hljs"><code><div>mvn clean package
+</div></code></pre>
+<hr>
+<h1 id="idea-importante-da-ricordare">Idea importante da ricordare</h1>
+<p>Maven introduce tre concetti fondamentali:</p>
+<ol>
+<li>
+<p><strong>convention over configuration</strong>
+i progetti seguono una struttura standard</p>
+</li>
+<li>
+<p><strong>gestione automatica delle dipendenze</strong></p>
+</li>
+<li>
+<p><strong>build riproducibile</strong></p>
+</li>
+</ol>
+<p>Questo significa che qualsiasi sviluppatore può aprire il progetto e costruirlo con un solo comando:</p>
+<pre class="hljs"><code><div>mvn package
+</div></code></pre>
+<hr>
+<h2 id="alcuni-riferimenti">Alcuni riferimenti</h2>
+<p>Apache Maven – sito ufficiale
+<a href="https://maven.apache.org/">https://maven.apache.org/</a></p>
+<p>Guida Maven
+<a href="https://maven.apache.org/guides/getting-started/index.html">https://maven.apache.org/guides/getting-started/index.html</a></p>
+<p>Maven Central Repository
+<a href="https://repo.maven.apache.org/maven2/">https://repo.maven.apache.org/maven2/</a></p>
+<p>Documentazione Maven in IntelliJ
+<a href="https://www.jetbrains.com/help/idea/maven.html">https://www.jetbrains.com/help/idea/maven.html</a></p>
+<p>Documentazione Maven per VS Code
+<a href="https://code.visualstudio.com/docs/java/java-build#_maven">https://code.visualstudio.com/docs/java/java-build#_maven</a></p>
+
+</body>
+</html>
