@@ -1,7 +1,7 @@
 ---
 
 marp: true
-paginate: true
+paginate: false
 theme: scuola-a4-landscape
 
 ---
